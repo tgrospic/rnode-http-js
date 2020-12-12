@@ -1,0 +1,58 @@
+{
+  "name": "@tgrospic/rnode-http-js",
+  "preview": true,
+  "version": "0.1.5",
+  "description": "HTTP client support for RNode",
+  "repository": "github:tgrospic/rnode-http-js",
+  "author": "Tomislav Grospič (RChain.coop)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "module": "dist-module/index.js",
+  "types": "dist-types/index.d.ts",
+  "scripts": {
+    "start": "run-p build:es5:w build:es5:module:w",
+    "build": "run-p build:es5 build:es5:module",
+    "build:es5": "tsc",
+    "build:es5:w": "tsc -w",
+    "build:es5:module": "tsc --module es6 --outdir dist-module",
+    "build:es5:module:w": "tsc -w --module es6 --outdir dist-module",
+    "prepublishOnly": "npm-run-all clean build",
+    "publish:public": "npm publish --access public",
+    "clean": "rimraf dist dist-module dist-types",
+    "clean:all": "rimraf dist dist-module dist-types node_modules"
+  },
+  "keywords": [
+    "rchain",
+    "http",
+    "web",
+    "javascript",
+    "js",
+    "rnode",
+    "rholang"
+  ],
+  "dependencies": {
+    "blakejs": "^1.1.0",
+    "bs58": "^4.0.1",
+    "elliptic": "^6.5.3",
+    "ethereumjs-util": "^7.0.7",
+    "google-protobuf": "^3.14.0",
+    "js-sha3": "^0.8.0",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "@types/bs58": "^4.0.1",
+    "@types/elliptic": "^6.4.12",
+    "@types/ethereumjs-util": "^6.1.0",
+    "@types/google-protobuf": "^3.7.4",
+    "@types/ramda": "^0.27.32",
+    "npm-run-all": "^4.1.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.1.3"
+  },
+  "files": [
+    "dist",
+    "dist-module",
+    "dist-types",
+    "src"
+  ]
+}
