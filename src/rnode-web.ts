@@ -104,7 +104,7 @@ export function makeRNodeWeb (effects: DOMEffects): RNodeWebAPI {
   }
 }
 
-export type MakeRNode = (f: typeof fetch) => RNodeHttp
+type MakeRNode = (f: typeof fetch) => RNodeHttp
 
 /**
  * Helper function to create RNode wrapper to Web API.
@@ -255,7 +255,7 @@ const fetchDeploy: FetchDeployMethod = rnodeHttp => async ({httpUrl}, deployId) 
   }
 }
 
-export type RNodeHttpAdminUrl = {httpAdminUrl: string}
+type RNodeHttpAdminUrl = {httpAdminUrl: string}
 
 type ProposeMethod = (r: RNodeHttp) => (node: RNodeHttpAdminUrl) => Promise<string>
 
