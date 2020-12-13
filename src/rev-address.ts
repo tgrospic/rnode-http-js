@@ -29,7 +29,7 @@ const prefix = { coinId : "000000", version: "00" }
 /**
  * Get REV address from ETH address.
  */
-export const getAddrFromEth = (ethAddrRaw: string) => {
+export function getAddrFromEth(ethAddrRaw: string): string | undefined {
   const ethAddr = ethAddrRaw.replace(/^0x/, '')
   if (!ethAddr || ethAddr.length !== 40) return
 
@@ -49,9 +49,9 @@ export const getAddrFromEth = (ethAddrRaw: string) => {
 /**
  * Get REV address (with ETH address) from public key.
  */
-export const getAddrFromPublicKey = (publicKeyRaw: string) => {
+export function getAddrFromPublicKey(publicKeyRaw: string): RevAddress | undefined {
   const publicKey = publicKeyRaw.replace(/^0x/, '')
-  if (!publicKey || publicKey.length !== 130) return
+  if (!publicKey || publicKey.length !== 130) return void 666
 
   // Public key bytes from hex string
   const pubKeyBytes = decodeBase16(publicKey)
@@ -61,16 +61,14 @@ export const getAddrFromPublicKey = (publicKeyRaw: string) => {
   const pkHash40 = pkHash.slice(-40)
 
   // Return both REV and ETH address
-  return <RevAddress>{
-    revAddr: getAddrFromEth(pkHash40),
-    ethAddr: pkHash40,
-  }
+  const revAddr = getAddrFromEth(pkHash40)
+  return !!revAddr ? { revAddr, ethAddr: pkHash40 } : void 666
 }
 
 /**
  * Get REV address (with ETH address and public key) from private key.
  */
-export const getAddrFromPrivateKey = (privateKeyRaw: string) => {
+export function getAddrFromPrivateKey(privateKeyRaw: string): RevAddress | undefined {
   const privateKey = privateKeyRaw.replace(/^0x/, '')
   if (!privateKey || privateKey.length !== 64) return
 
@@ -80,15 +78,15 @@ export const getAddrFromPrivateKey = (privateKeyRaw: string) => {
   const addr   = getAddrFromPublicKey(pubKey)
 
   // Return public key, REV and ETH address
-  return <RevAddress>{ pubKey, ...addr }
+  return !!addr ? { pubKey, ...addr } : void 666
 }
 
 /**
  * Verify REV address
  */
-export const verifyRevAddr = (revAddr: string) => {
+export function verifyRevAddr(revAddr: string): boolean {
   const revBytes = decodeBase58safe(revAddr)
-  if (!revBytes) return
+  if (!revBytes) return false
 
   // Extract payload and checksum
   const revHex   = encodeBase16(revBytes)
@@ -104,21 +102,21 @@ export const verifyRevAddr = (revAddr: string) => {
 /**
  * Generates new private and public key, ETH and REV address.
  */
-export const newRevAccount = () => {
+export function newRevAccount(): RevAddress {
   // Generate new key and REV address from it
   const key     = secp256k1.genKeyPair()
   const privKey = key.getPrivate('hex')
-  const addr    = getAddrFromPrivateKey(privKey)
+  const addr    = getAddrFromPrivateKey(privKey) as RevAddress
 
   // Return public key, REV and ETH address
-  return <RevAddress>{ privKey, ...addr }
+  return { privKey, ...addr }
 }
 
 /**
  * Creates REV address from different formats
  * (private key -> public key -> ETH address -> REV address)
  */
-export const createRevAccount = (text: string) => {
+export function createRevAccount(text: string): RevAddress | undefined {
   const val = text.replace(/^0x/, '').trim()
 
   // Account from private key, public key, ETH or REV address
