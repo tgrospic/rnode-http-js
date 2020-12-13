@@ -1,7 +1,7 @@
 {
   "name": "@tgrospic/rnode-http-js",
   "preview": true,
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "HTTP client support for RNode",
   "repository": "github:tgrospic/rnode-http-js",
   "author": "Tomislav Grospič (RChain.coop)",
