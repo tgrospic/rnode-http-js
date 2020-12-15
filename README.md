@@ -11,9 +11,9 @@ For gRPC connection from nodejs please check [**@tgrospic/rnode-grpc-js**](https
 
 ## RNode connection to Metamask (with hardware wallet)
 
-Helper functions are in [eth-wrapper.js](src/eth/eth-wrapper.js) which contains the code for communication with Metamask, getting selected ETH address and sending deploys for signing.
-In [eth-sign.js](src/eth/eth-sign.js) are functions to verify deploy signature and to extract public key.  
-This is all that is needed for communication with Metamask and also for connected hardware wallets (Ledger, Trezor). How to use these functions and send deploys to RNode is in [rnode-web.js](src/rnode-web.js).
+Helper functions are in [eth-wrapper.ts](src/eth/eth-wrapper.ts) which contains the code for communication with Metamask, getting selected ETH address and sending deploys for signing.
+In [eth-sign.ts](src/eth/eth-sign.ts) are functions to verify deploy signature and to extract public key.  
+This is all that is needed for communication with Metamask and also for connected hardware wallets (Ledger, Trezor). How to use these functions and send deploys to RNode is in [rnode-web.ts](src/rnode-web.ts).
 
 ## Install
 
