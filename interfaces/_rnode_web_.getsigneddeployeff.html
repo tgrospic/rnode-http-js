@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Deploy | @tgrospic/rnode-http-js</title>
+	<title>GetSignedDeployEff | @tgrospic/rnode-http-js</title>
 	<meta name="description" content="Documentation for @tgrospic/rnode-http-js">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -57,28 +57,21 @@
 					<a href="../modules/_rnode_web_.html">&quot;rnode-web&quot;</a>
 				</li>
 				<li>
-					<a href="_rnode_web_.deploy.html">Deploy</a>
+					<a href="_rnode_web_.getsigneddeployeff.html">GetSignedDeployEff</a>
 				</li>
 			</ul>
-			<h1>Interface Deploy</h1>
+			<h1>Interface GetSignedDeployEff</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>Deploy object with signature</p>
-					</div>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">Deploy</span>
+						<span class="target">GetSignedDeployEff</span>
 					</li>
 				</ul>
 			</section>
@@ -89,10 +82,7 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_rnode_web_.deploy.html#data" class="tsd-kind-icon">data</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_rnode_web_.deploy.html#deployer" class="tsd-kind-icon">deployer</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_rnode_web_.deploy.html#sigalgorithm" class="tsd-kind-icon">sig<wbr>Algorithm</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_rnode_web_.deploy.html#signature" class="tsd-kind-icon">signature</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_rnode_web_.getsigneddeployeff.html#getsigneddeploy" class="tsd-kind-icon">get<wbr>Signed<wbr>Deploy</a></li>
 							</ul>
 						</section>
 					</div>
@@ -101,44 +91,54 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="data" class="tsd-anchor"></a>
-					<h3>data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="_rnode_sign_.deploydata.html" class="tsd-signature-type">DeployData</a></div>
+					<a name="getsigneddeploy" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagReadonly">Readonly</span> get<wbr>Signed<wbr>Deploy</h3>
+					<div class="tsd-signature tsd-kind-icon">get<wbr>Signed<wbr>Deploy<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>httpUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span>, account<span class="tsd-signature-symbol">: </span><a href="_rev_address_.revaccount.html" class="tsd-signature-type">RevAccount</a>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, phloLimit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_rnode_web_.deploy.html" class="tsd-signature-type">Deploy</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/tgrospic/rnode-http-js/blob/5557206/src/rnode-web.ts#L56">rnode-web.ts:56</a></li>
+							<li>Defined in <a href="https://github.com/tgrospic/rnode-http-js/blob/5557206/src/rnode-web.ts#L25">rnode-web.ts:25</a></li>
 						</ul>
 					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="deployer" class="tsd-anchor"></a>
-					<h3>deployer</h3>
-					<div class="tsd-signature tsd-kind-icon">deployer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tgrospic/rnode-http-js/blob/5557206/src/rnode-web.ts#L58">rnode-web.ts:58</a></li>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>Creates signed deploy.</p>
+						</div>
+					</div>
+					<div class="tsd-type-declaration">
+						<h4>Type declaration</h4>
+						<ul class="tsd-parameters">
+							<li class="tsd-parameter-signature">
+								<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-property">
+									<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>httpUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span>, account<span class="tsd-signature-symbol">: </span><a href="_rev_address_.revaccount.html" class="tsd-signature-type">RevAccount</a>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, phloLimit<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_rnode_web_.deploy.html" class="tsd-signature-type">Deploy</a><span class="tsd-signature-symbol">&gt;</span></li>
+								</ul>
+								<ul class="tsd-descriptions">
+									<li class="tsd-description">
+										<h4 class="tsd-parameters-title">Parameters</h4>
+										<ul class="tsd-parameters">
+											<li>
+												<h5>node: <span class="tsd-signature-symbol">{ </span>httpUrl<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> }</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter">
+														<h5>http<wbr>Url<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></h5>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<h5>account: <a href="_rev_address_.revaccount.html" class="tsd-signature-type">RevAccount</a></h5>
+											</li>
+											<li>
+												<h5>code: <span class="tsd-signature-type">string</span></h5>
+											</li>
+											<li>
+												<h5><span class="tsd-flag ts-flagOptional">Optional</span> phloLimit: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+											</li>
+										</ul>
+										<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="_rnode_web_.deploy.html" class="tsd-signature-type">Deploy</a><span class="tsd-signature-symbol">&gt;</span></h4>
+									</li>
+								</ul>
+							</li>
 						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="sigalgorithm" class="tsd-anchor"></a>
-					<h3>sig<wbr>Algorithm</h3>
-					<div class="tsd-signature tsd-kind-icon">sig<wbr>Algorithm<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tgrospic/rnode-http-js/blob/5557206/src/rnode-web.ts#L57">rnode-web.ts:57</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="signature" class="tsd-anchor"></a>
-					<h3>signature</h3>
-					<div class="tsd-signature tsd-kind-icon">signature<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/tgrospic/rnode-http-js/blob/5557206/src/rnode-web.ts#L59">rnode-web.ts:59</a></li>
-						</ul>
-					</aside>
+					</div>
 				</section>
 			</section>
 		</div>
@@ -179,36 +179,27 @@
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_rnode_web_.domeffects.html" class="tsd-kind-icon">DOMEffects</a>
 					</li>
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-module">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_rnode_web_.deploy.html" class="tsd-kind-icon">Deploy</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_rnode_web_.deploy.html#data" class="tsd-kind-icon">data</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_rnode_web_.deploy.html#deployer" class="tsd-kind-icon">deployer</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_rnode_web_.deploy.html#sigalgorithm" class="tsd-kind-icon">sig<wbr>Algorithm</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_rnode_web_.deploy.html#signature" class="tsd-kind-icon">signature</a>
-							</li>
-						</ul>
 					</li>
-				</ul>
-				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_rnode_web_.deployresult.html" class="tsd-kind-icon">Deploy<wbr>Result</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_rnode_web_.getdeploydataeff.html" class="tsd-kind-icon">Get<wbr>Deploy<wbr>Data<wbr>Eff</a>
 					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-module">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-module">
 						<a href="_rnode_web_.getsigneddeployeff.html" class="tsd-kind-icon">Get<wbr>Signed<wbr>Deploy<wbr>Eff</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_rnode_web_.getsigneddeployeff.html#getsigneddeploy" class="tsd-kind-icon">get<wbr>Signed<wbr>Deploy</a>
+							</li>
+						</ul>
 					</li>
+				</ul>
+				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-module">
 						<a href="_rnode_web_.proposeeff.html" class="tsd-kind-icon">Propose<wbr>Eff</a>
 					</li>
