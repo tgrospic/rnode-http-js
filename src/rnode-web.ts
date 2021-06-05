@@ -9,13 +9,21 @@ import { RevAccount } from './rev-address'
 
 export type RNodeHttp = (httpUrl: string, apiMethod: string, data?: any) => Promise<any>
 
-export type RNodeWebAPI = SendDeployEff & GetDeployDataEff & ProposeEff & RawRNodeHttpEff
+export type RNodeWebAPI = SendDeployEff & GetDeployDataEff & ProposeEff & RawRNodeHttpEff & GetSignedDeployEff
 
 export interface RawRNodeHttpEff {
   /**
    * Raw RNode HTTP interface.
    */
-  rnodeHttp: RNodeHttp
+  readonly rnodeHttp: RNodeHttp
+}
+
+export interface GetSignedDeployEff {
+  /**
+   * Creates signed deploy.
+   */
+  readonly getSignedDeploy: (node: { httpUrl: string }, account: RevAccount, code: string, phloLimit?: number)
+    => Promise<Deploy>
 }
 
 export interface SendDeployEff {
@@ -101,6 +109,8 @@ export function makeRNodeWeb (effects: DOMEffects): RNodeWebAPI {
     sendDeploy      : sendDeploy(rnodeHttp, now),
     getDataForDeploy: getDataForDeploy(rnodeHttp),
     propose         : propose(rnodeHttp),
+    // WIP - offline deploy
+    getSignedDeploy : getSignedDeploy(rnodeHttp, now),
   }
 }
 
@@ -138,6 +148,47 @@ type SendDeployMethod =
   , code: string
   , phloLimit?: number
   ) => Promise<Deploy>
+
+/**
+ * Creates signed deploy.
+ */
+const getSignedDeploy: SendDeployMethod = (rnodeHttp, now) => async ({httpUrl}, account, code, phloLimit) => {
+  // Check if deploy can be signed
+  if (!account.privKey) {
+    const selEthAddr = account.ethAddr
+    if (ethDetected && !!selEthAddr) {
+      // If Metamask is detected check ETH address
+      const ethAddr = await ethereumAddress()
+
+      const ethFromMM = ethAddr.replace(/^0x/, '').trim().toLowerCase()
+      const ethSaved = selEthAddr.trim().toLowerCase()
+      console.log({ethFromMM, ethSaved})
+
+      if (ethAddr.replace(/^0x/, '').trim().toLowerCase() !== selEthAddr.trim().toLowerCase())
+        throw Error('Selected account is not the same as Metamask account.')
+    } else {
+      throw Error(`Selected account doesn't have private key and cannot be used for signing.`)
+    }
+  }
+
+  // Get the latest block number
+  const [{ blockNumber }] = await rnodeHttp(httpUrl, 'blocks/1')
+
+  // Create a deploy
+  const phloLimitNum = !!phloLimit || phloLimit == 0 ? phloLimit : 250e3
+  const deployData: DeployData = {
+    term: code,
+    phloLimit: phloLimitNum, phloPrice: 1,
+    validAfterBlockNumber: blockNumber,
+    timestamp: now(),
+  }
+
+  const deploy = !!account.privKey
+    ? signPrivKey(deployData, account.privKey)
+    : await signMetamask(deployData)
+
+  return deploy
+}
 
 /**
  * Creates deploy, signing and sending to RNode.
