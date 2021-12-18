@@ -243,7 +243,7 @@ type DataForDeployMethod =
 const getDataForDeploy: DataForDeployMethod = rnodeHttp => async ({httpUrl}, deployId, onProgress) => {
   GET_DATA_TIMEOUT_HANDLE && clearTimeout(GET_DATA_TIMEOUT_HANDLE)
 
-  const getData = (resolve: (d: any) => void, reject: (ex: Error) => void) => async () => {
+  const getData = (resolve: (d: any) => void, reject: (ex: any) => void) => async () => {
     const getDataUnsafe = async () => {
       // Fetch deploy by signature (deployId)
       const deploy = await fetchDeploy(rnodeHttp)({httpUrl}, deployId)
@@ -280,7 +280,7 @@ const getDataForDeploy: DataForDeployMethod = rnodeHttp => async ({httpUrl}, dep
   })
 }
 
-type RNodeHttpUrl = {httpUrl: string}
+export type RNodeHttpUrl = {httpUrl: string}
 
 type FetchDeployMethod =
   (r: RNodeHttp) => (node: RNodeHttpUrl, deployId: string)
@@ -306,7 +306,7 @@ const fetchDeploy: FetchDeployMethod = rnodeHttp => async ({httpUrl}, deployId) 
   }
 }
 
-type RNodeHttpAdminUrl = {httpAdminUrl: string}
+export type RNodeHttpAdminUrl = {httpAdminUrl: string}
 
 type ProposeMethod = (r: RNodeHttp) => (node: RNodeHttpAdminUrl) => Promise<string>
 

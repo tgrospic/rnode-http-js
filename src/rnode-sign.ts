@@ -56,7 +56,7 @@ export const signDeploy = function (privateKey: ec.KeyPair | string, deployObj: 
   const deployer = Uint8Array.from(key.getPublic('array'))
   // Hash and sign serialized deploy
   const hashed   = blake.blake2bHex(deploySerialized, void 666, 32)
-  const sigArray = key.sign(hashed, {canonical: true}).toDER('array')
+  const sigArray = key.sign(hashed, {canonical: true}).toDER()
   const sig      = Uint8Array.from(sigArray)
 
   // Return deploy object / ready for sending to RNode
