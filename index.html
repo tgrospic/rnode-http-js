@@ -1,145 +1,23 @@
-<!doctype html>
-<html class="default no-js">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>@tgrospic/rnode-http-js</title>
-	<meta name="description" content="Documentation for @tgrospic/rnode-http-js">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-<header>
-	<div class="tsd-page-toolbar">
-		<div class="container">
-			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
-					<div class="field">
-						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
-						<input id="tsd-search-field" type="text" />
-					</div>
-					<ul class="results">
-						<li class="state loading">Preparing search index...</li>
-						<li class="state failure">The search index is not available</li>
-					</ul>
-					<a href="index.html" class="title">@tgrospic/rnode-http-js</a>
-				</div>
-				<div class="table-cell" id="tsd-widgets">
-					<div id="tsd-filter">
-						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
-						<div class="tsd-filter-group">
-							<div class="tsd-select" id="tsd-filter-visibility">
-								<span class="tsd-select-label">All</span>
-								<ul class="tsd-select-list">
-									<li data-value="public">Public</li>
-									<li data-value="protected">Public/Protected</li>
-									<li data-value="private" class="selected">All</li>
-								</ul>
-							</div>
-							<input type="checkbox" id="tsd-filter-inherited" checked />
-							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-						</div>
-					</div>
-					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="tsd-page-title">
-		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
-			<h1>@tgrospic/rnode-http-js</h1>
-		</div>
-	</div>
-</header>
-<div class="container container-main">
-	<div class="row">
-		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<a href="#rnode-web-api-client" id="rnode-web-api-client" style="color: inherit; text-decoration: none;">
-					<h1>RNode Web API client</h1>
-				</a>
-				<p>This library is a thin layer around RNode HTTP API with helper functions to create, sign and validate deploy, pull deploy result until block is proposed and Ethereum signature support to enable use of Metamask with hardware wallet.</p>
-				<p>In the browser connection to RNode can be done with <strong>RNode Web API</strong>.
-				Web API has defined schema only in Scala source, for the new info please check <a href="https://github.com/rchain/rchain/issues/2974">RChain issue 2974</a>.</p>
-				<p>For gRPC connection from nodejs please check <a href="https://github.com/tgrospic/rnode-grpc-js"><strong>@tgrospic/rnode-grpc-js</strong></a>.</p>
-				<p><strong>Example of single page wallet can be found in this repository <a href="https://github.com/tgrospic/rnode-client-js">tgrospic/rnode-client-js</a></strong>.</p>
-				<a href="#rnode-connection-to-metamask-with-hardware-wallet" id="rnode-connection-to-metamask-with-hardware-wallet" style="color: inherit; text-decoration: none;">
-					<h2>RNode connection to Metamask (with hardware wallet)</h2>
-				</a>
-				<p>Helper functions are in <a href="src/eth/eth-wrapper.ts">eth-wrapper.ts</a> which contains the code for communication with Metamask, getting selected ETH address and sending deploys for signing.
-				In <a href="src/eth/eth-sign.ts">eth-sign.ts</a> are functions to verify deploy signature and to extract public key.<br>This is all that is needed for communication with Metamask and also for connected hardware wallets (Ledger, Trezor). How to use these functions and send deploys to RNode is in <a href="src/rnode-web.ts">rnode-web.ts</a>.</p>
-				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
-					<h2>Install</h2>
-				</a>
-				<p>The package includes TypeScript definitions.</p>
-				<pre><code class="language-sh">npm install @tgrospic/rnode-http-js</code></pre>
-			</div>
-		</div>
-		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
-			<nav class="tsd-navigation primary">
-				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_codecs_.html">&quot;codecs&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_eth_eth_sign_.html">&quot;eth/eth-<wbr>sign&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_eth_eth_wrapper_.html">&quot;eth/eth-<wbr>wrapper&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_index_.html">&quot;index&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_rev_address_.html">&quot;rev-<wbr>address&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_rho_json_.html">&quot;rho-<wbr>json&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_rnode_sign_.html">&quot;rnode-<wbr>sign&quot;</a>
-					</li>
-					<li class=" tsd-kind-module">
-						<a href="modules/_rnode_web_.html">&quot;rnode-<wbr>web&quot;</a>
-					</li>
-				</ul>
-			</nav>
-			<nav class="tsd-navigation secondary menu-sticky">
-				<ul class="before-current">
-				</ul>
-			</nav>
-		</div>
-	</div>
-</div>
-<footer class="with-border-bottom">
-	<div class="container">
-		<h2>Legend</h2>
-		<div class="tsd-legend-group">
-			<ul class="tsd-legend">
-				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
-				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
-				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-			</ul>
-			<ul class="tsd-legend">
-				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
-			</ul>
-		</div>
-	</div>
-</footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
-<div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>@tgrospic/rnode-http-js</title><meta name="description" content="Documentation for @tgrospic/rnode-http-js"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">@tgrospic/rnode-http-js</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>@tgrospic/rnode-http-js</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#rnode-web-api-client" id="rnode-web-api-client" style="color: inherit; text-decoration: none;">
+  <h1>RNode Web API client</h1>
+</a>
+<p>This library is a thin layer around RNode HTTP API with helper functions to create, sign and validate deploy, pull deploy result until block is proposed and Ethereum signature support to enable use of Metamask with hardware wallet.</p>
+<p>In the browser connection to RNode can be done with <strong>RNode Web API</strong>.
+Web API has defined schema only in Scala source, for the new info please check <a href="https://github.com/rchain/rchain/issues/2974">RChain issue 2974</a>.</p>
+<p>For gRPC connection from nodejs please check <a href="https://github.com/tgrospic/rnode-grpc-js"><strong>@tgrospic/rnode-grpc-js</strong></a>.</p>
+<p><strong>Example of single page wallet can be found in this repository <a href="https://github.com/tgrospic/rnode-client-js">tgrospic/rnode-client-js</a></strong>.</p>
+
+<a href="#rnode-connection-to-metamask-with-hardware-wallet" id="rnode-connection-to-metamask-with-hardware-wallet" style="color: inherit; text-decoration: none;">
+  <h2>RNode connection to Metamask (with hardware wallet)</h2>
+</a>
+<p>Helper functions are in <a href="src/eth/eth-wrapper.ts">eth-wrapper.ts</a> which contains the code for communication with Metamask, getting selected ETH address and sending deploys for signing.
+In <a href="src/eth/eth-sign.ts">eth-sign.ts</a> are functions to verify deploy signature and to extract public key.<br>This is all that is needed for communication with Metamask and also for connected hardware wallets (Ledger, Trezor). How to use these functions and send deploys to RNode is in <a href="src/rnode-web.ts">rnode-web.ts</a>.</p>
+
+<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+  <h2>Install</h2>
+</a>
+<p>The package includes TypeScript definitions.</p>
+<pre><code class="language-sh"><span class="hl-0">npm install @tgrospic/rnode-http-js</span>
+</code></pre>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-interface"><a href="interfaces/DOMEffects.html" class="tsd-kind-icon">DOMEffects</a></li><li class="tsd-kind-interface"><a href="interfaces/Deploy.html" class="tsd-kind-icon">Deploy</a></li><li class="tsd-kind-interface"><a href="interfaces/DeployData.html" class="tsd-kind-icon">Deploy<wbr/>Data</a></li><li class="tsd-kind-interface"><a href="interfaces/DeployResult.html" class="tsd-kind-icon">Deploy<wbr/>Result</a></li><li class="tsd-kind-interface"><a href="interfaces/DeploySignedProto.html" class="tsd-kind-icon">Deploy<wbr/>Signed<wbr/>Proto</a></li><li class="tsd-kind-interface"><a href="interfaces/GetDeployDataEff.html" class="tsd-kind-icon">Get<wbr/>Deploy<wbr/>Data<wbr/>Eff</a></li><li class="tsd-kind-interface"><a href="interfaces/GetSignedDeployEff.html" class="tsd-kind-icon">Get<wbr/>Signed<wbr/>Deploy<wbr/>Eff</a></li><li class="tsd-kind-interface"><a href="interfaces/ProposeEff.html" class="tsd-kind-icon">Propose<wbr/>Eff</a></li><li class="tsd-kind-interface"><a href="interfaces/RawRNodeHttpEff.html" class="tsd-kind-icon">RawRNode<wbr/>Http<wbr/>Eff</a></li><li class="tsd-kind-interface"><a href="interfaces/RevAccount.html" class="tsd-kind-icon">Rev<wbr/>Account</a></li><li class="tsd-kind-interface"><a href="interfaces/RevAddress.html" class="tsd-kind-icon">Rev<wbr/>Address</a></li><li class="tsd-kind-interface"><a href="interfaces/SendDeployEff.html" class="tsd-kind-icon">Send<wbr/>Deploy<wbr/>Eff</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RNodeHttp" class="tsd-kind-icon">RNode<wbr/>Http</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RNodeHttpAdminUrl" class="tsd-kind-icon">RNode<wbr/>Http<wbr/>Admin<wbr/>Url</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RNodeHttpUrl" class="tsd-kind-icon">RNode<wbr/>Http<wbr/>Url</a></li><li class="tsd-kind-type-alias"><a href="modules.html#RNodeWebAPI" class="tsd-kind-icon">RNode<wbr/>WebAPI</a></li><li class="tsd-kind-variable"><a href="modules.html#ethDetected" class="tsd-kind-icon">eth<wbr/>Detected</a></li><li class="tsd-kind-function"><a href="modules.html#createRevAccount" class="tsd-kind-icon">create<wbr/>Rev<wbr/>Account</a></li><li class="tsd-kind-function"><a href="modules.html#decodeAscii" class="tsd-kind-icon">decode<wbr/>Ascii</a></li><li class="tsd-kind-function"><a href="modules.html#decodeBase16" class="tsd-kind-icon">decode<wbr/>Base16</a></li><li class="tsd-kind-function"><a href="modules.html#decodeBase58safe" class="tsd-kind-icon">decode<wbr/>Base58safe</a></li><li class="tsd-kind-function"><a href="modules.html#deployDataProtobufSerialize" class="tsd-kind-icon">deploy<wbr/>Data<wbr/>Protobuf<wbr/>Serialize</a></li><li class="tsd-kind-function"><a href="modules.html#encodeBase16" class="tsd-kind-icon">encode<wbr/>Base16</a></li><li class="tsd-kind-function"><a href="modules.html#encodeBase58" class="tsd-kind-icon">encode<wbr/>Base58</a></li><li class="tsd-kind-function"><a href="modules.html#ethereumAddress" class="tsd-kind-icon">ethereum<wbr/>Address</a></li><li class="tsd-kind-function"><a href="modules.html#ethereumSign" class="tsd-kind-icon">ethereum<wbr/>Sign</a></li><li class="tsd-kind-function"><a href="modules.html#getAddrFromEth" class="tsd-kind-icon">get<wbr/>Addr<wbr/>From<wbr/>Eth</a></li><li class="tsd-kind-function"><a href="modules.html#getAddrFromPrivateKey" class="tsd-kind-icon">get<wbr/>Addr<wbr/>From<wbr/>Private<wbr/>Key</a></li><li class="tsd-kind-function"><a href="modules.html#getAddrFromPublicKey" class="tsd-kind-icon">get<wbr/>Addr<wbr/>From<wbr/>Public<wbr/>Key</a></li><li class="tsd-kind-function"><a href="modules.html#makeRNodeWeb" class="tsd-kind-icon">makeRNode<wbr/>Web</a></li><li class="tsd-kind-function"><a href="modules.html#newRevAccount" class="tsd-kind-icon">new<wbr/>Rev<wbr/>Account</a></li><li class="tsd-kind-function"><a href="modules.html#recoverPublicKeyEth" class="tsd-kind-icon">recover<wbr/>Public<wbr/>Key<wbr/>Eth</a></li><li class="tsd-kind-function"><a href="modules.html#rhoExprToJson" class="tsd-kind-icon">rho<wbr/>Expr<wbr/>To<wbr/>Json</a></li><li class="tsd-kind-function"><a href="modules.html#signDeploy" class="tsd-kind-icon">sign<wbr/>Deploy</a></li><li class="tsd-kind-function"><a href="modules.html#signMetamask" class="tsd-kind-icon">sign<wbr/>Metamask</a></li><li class="tsd-kind-function"><a href="modules.html#signPrivKey" class="tsd-kind-icon">sign<wbr/>Priv<wbr/>Key</a></li><li class="tsd-kind-function"><a href="modules.html#toWebDeploy" class="tsd-kind-icon">to<wbr/>Web<wbr/>Deploy</a></li><li class="tsd-kind-function"><a href="modules.html#verifyDeploy" class="tsd-kind-icon">verify<wbr/>Deploy</a></li><li class="tsd-kind-function"><a href="modules.html#verifyDeployEth" class="tsd-kind-icon">verify<wbr/>Deploy<wbr/>Eth</a></li><li class="tsd-kind-function"><a href="modules.html#verifyRevAddr" class="tsd-kind-icon">verify<wbr/>Rev<wbr/>Addr</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Legend</h2><div class="tsd-legend-group"><ul class="tsd-legend"><li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li><li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li></ul></div><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
